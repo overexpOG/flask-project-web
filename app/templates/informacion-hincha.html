@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Panamericanos 2023</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="../static/css/informacion.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Información del hincha</h1>
+            <p>Nombre: <span>{{data.nombre}}</span></p>
+            <p>Region: <span>{{data.region}}</span></p>
+            <p>Comuna: <span>{{data.comuna}}</span></p>
+            <p>Email: <span>{{data.email}}</span></p>
+            <p>Numero de contacto: <span>{{data.telefono}}</span></p>
+            <p>Deportes a apoyar:</p>
+            <ul>
+                {% for deporte in data.deportes %}
+                    <li>{{deporte}}</li>
+                {% endfor %}
+            </ul>
+            <p>Modo de transporte: <span>{{data.transporte}}</span></p>
+            <p>Comentarios adicionales: <span>{{data.comentario}}</span></p>
+            <div class="espacio"></div>
+            <div style="text-align: center;">
+                <a href="/lista-hincha/1">Lista hinchas</a>
+            </div>
+            <div class="espacio"></div>
+        </div>
+    </body>
+</html>

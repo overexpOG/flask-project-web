@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Panamericanos 2023</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="../static/css/index.css">
+    </head>
+    <body>
+        <div class="container">
+          <div class="logo">
+            <img id="logo-id" src="../static/santiago2023.svg" alt="Logo de juegos Panamericanos 2023">
+          </div>
+          <p id="bajada">Selecciona una entrada</p>
+          <div class="html">
+            <a href="/agregar-hincha">Registrar hincha</a>
+          </div>
+          <div class="html">
+            <a href="/agregar-artesano">Registrar artesano</a>
+          </div>
+          <div class="html">
+            <a href="/lista-hincha/1">Ver listado de hinchas</a>
+          </div>
+          <div class="html">
+            <a href="/lista-artesano/1">Ver listado de artesanos</a>
+          </div>
+          <div class="html">
+            <a href="/estadistica">Ver estadisticas</a>
+          </div>
+        </div>
+        {% if recibido %}
+        <div id="msg-enviado-artesano" class="recibido">
+            <p style="text-align: center;">Hemos recibido el registro del {{recibido}}. Muchas gracias.</p>
+            <div style="text-align: center;">
+                <a href="/">Ok</a>
+            </div>
+        </div>
+        {% endif %}
+    </body>
+</html>

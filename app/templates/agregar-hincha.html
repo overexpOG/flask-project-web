@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Panamericanos 2023</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="../static/css/agregar-hincha.css">
+    </head>
+    <body>
+        <div class="container">
+            <form action="/agregar-hincha" id="add-hincha-form" method="post" enctype="multipart/form-data">
+                <div id="val-box-hincha" hidden>
+                    <h2 id="val-msg-hincha"></h2>
+                    <ul id="val-list-hincha"></ul>
+                </div>
+                {% if error %}
+                    <div class="error">
+                    {{ error }}
+                    </div>
+                {% endif %}
+                <div id="sport-input" class="grupo-input">
+                    <div class="contenedor-label">
+                        <label for="sport">Deportes</label>
+                    </div>
+                    <select class="form-select" id="sport" name="sport" multiple required>
+                        <option value=1>Clavados</option>
+                        <option value=2>Natación</option>
+                        <option value=3>Natación artística</option>
+                        <option value=4>Polo acuático</option>
+                        <option value=5>Natación en Aguas abiertas</option>
+                        <option value=6>Maratón</option>
+                        <option value=7>Marcha</option>
+                        <option value=8>Atletismo</option>
+                        <option value=9>Bádminton</option>
+                        <option value=10>Balonmano</option>
+                        <option value=11>Básquetbol</option>
+                        <option value=12>Básquetbol 3x3</option>
+                        <option value=13>Béisbol</option>
+                        <option value=14>Boxeo</option>
+                        <option value=15>Bowling</option>
+                        <option value=16>Breaking </option>
+                        <option value=17>Canotaje Slalom</option>
+                        <option value=18>Canotaje de velocidad</option>
+                        <option value=19>BMX Freestyle</option>
+                        <option value=20>BMX Racing</option>
+                        <option value=21>Mountain Bike</option>
+                        <option value=22>Ciclismo pista</option>
+                        <option value=23>Ciclismo ruta</option>
+                        <option value=24>Adiestramiento ecuestre</option>
+                        <option value=25>Evento completo ecuestre</option>
+                        <option value=26>Salto ecuestre</option>
+                        <option value=27>Escalada deportiva</option>
+                        <option value=28>Esgrima</option>
+                        <option value=29>Esquí acuático y Wakeboard</option>
+                        <option value=30>Fútbol</option>
+                        <option value=31>Gimnasia artística Masculina</option>
+                        <option value=32>Gimnasia artística Femenina</option>
+                        <option value=33>Gimnasia rítmica</option>
+                        <option value=34>Gimnasia trampolín</option>
+                        <option value=35>Golf</option>
+                        <option value=36>Hockey césped</option>
+                        <option value=37>Judo</option>
+                        <option value=38>Karate</option>
+                        <option value=39>Levantamiento de pesas</option>
+                        <option value=40>Lucha</option>
+                        <option value=41>Patinaje artístico</option>
+                        <option value=42>Skateboarding</option>
+                        <option value=43>Patinaje velocidad</option>
+                        <option value=44>Pelota vasca </option>
+                        <option value=45>Pentatlón moderno</option>
+                        <option value=46>Racquetball</option>
+                        <option value=47>Remo</option>
+                        <option value=48>Rugby 7</option>
+                        <option value=49>Sóftbol</option>
+                        <option value=50>Squash</option>
+                        <option value=51>Surf</option>
+                        <option value=52>Taekwondo</option>
+                        <option value=53>Tenis</option>
+                        <option value=54>Tenis de mesa</option>
+                        <option value=55>Tiro</option>
+                        <option value=56>Tiro con arco</option>
+                        <option value=57>Triatlón</option>
+                        <option value=58>Vela</option>
+                        <option value=59>Vóleibol</option>
+                        <option value=60>Vóleibol playa</option>
+                    </select>
+                </div>
+                <div id="region-input" class="grupo-input">
+                    <div class="contenedor-label">
+                        <label for="region">Region</label>
+                    </div>
+                    <select class="form-select" id="region" name="region" required>
+                        <option value="">Region</option>
+                        <option value=0>Arica y Parinacota</option>
+                        <option value=1>Tarapacá</option>
+                        <option value=2>Antofagasta</option>
+                        <option value=3>Atacama</option>
+                        <option value=4>Coquimbo</option>
+                        <option value=5>Valparaiso</option>
+                        <option value=6>Metropolitana de Santiago</option>
+                        <option value=7>O'Higgins</option>
+                        <option value=8>Maule</option>
+                        <option value=9>Ñuble</option>
+                        <option value=10>Biobío</option>
+                        <option value=11>La Araucanía</option>
+                        <option value=12>Los Ríos</option>
+                        <option value=13>Los Lagos</option>
+                        <option value=14>Aysén</option>
+                        <option value=15>Magallanes y Antártica</option>
+                    </select>
+                </div>
+                <div id="comuna-input" class="grupo-input">
+                    <div class="contenedor-label">
+                        <label for="comuna">Comuna</label>
+                    </div>
+                    <select class="form-select" id="comuna" name="comuna" required>
+                        <option value="">Comuna</option>
+                    </select>
+                </div>
+                <div id="transporte-input" class="grupo-input">
+                    <div class="contenedor-label">
+                        <label for="transporte">Transporte</label>
+                    </div>
+                    <select class="form-select" id="transporte" name="transporte" required>
+                        <option value="">Transporte</option>
+                        <option value="Particular">Particular</option>
+                        <option value="Locomoción pública">Locomoción pública</option>
+                    </select>
+                </div>
+                <div id="name-input" class="grupo-input">
+                    <div class="contenedor-label">
+                        <label for="name">Nombre</label>
+                    </div>
+                    <input id="name" name="name" type="text" size="80" minlength="3" maxlength="80" required>
+                </div>
+                <div id="mail-input" class="grupo-input">
+                    <div class="contenedor-label">
+                        <label for="email">Email</label>
+                    </div>
+                    <input id="email" name="email" type="email" size="30" required>
+                </div>
+                <div id="celular-input" class="grupo-input">
+                    <div class="contenedor-label">
+                        <label for="celular">Numero de contacto</label>
+                    </div>
+                    <span>+56 </span>
+                    <input id="celular" name="celular" type="text" size="15" required>
+                </div>
+                <div id="comentario-input" class="grupo-input">
+                    <div class="contenedor-label">
+                        <label for="comentario">Comentario</label>
+                    </div>
+                    <input id="comentario" name="comentario" type="text" size="80">
+                </div>
+                <div class="contenedor-label"></div>
+                <div class="botones">
+                    <button type="button" id="envio">
+                        Registrar Hincha
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div id="Confirmation-hincha" class="confirmation">
+            <p style="text-align: center;">¿Confirma el registro de este hincha?</p>
+            <button type="button" id="confirmButton">Sí, confirmo</button>
+            <button type="button" id="cancelButton">No, quiero volver al formulario</button>
+        </div>
+        <div id="msg-enviado-hincha" class="confirmation">
+            <p style="text-align: center;">Hemos recibido el registro de Hincha. Muchas gracias.</p>
+            <div style="text-align: center;">
+                <a href="/">Inicio</a>
+            </div>
+        </div>
+        <script src="../static/js/agregar-hincha.js"></script>
+    </body>
+</html>

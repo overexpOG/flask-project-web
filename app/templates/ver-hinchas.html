@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Panamericanos 2023</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="../static/css/tabla.css">
+    </head>
+    <body>
+        <script>
+            function redirectTo(id) {
+                url = "/ver-hincha/" + id;
+                window.location.href = url;
+            }
+        </script>
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Comuna</th>
+                <th>Deportes</th>
+                <th>Modo de transportes</th>
+                <th>Número de celular</th>
+            </tr>
+            {% if data %}
+                {% for hincha in data %}
+                    <tr onclick="redirectTo({{ hincha.id }})">
+                        <td>{{hincha.nombre}}</td>
+                        <td>{{hincha.comuna}}</td>
+                        <td>
+                            <ul>
+                                {% for deporte in hincha.deportes%}
+                                <li>{{deporte}}</li>
+                                {% endfor%}
+                            </ul>
+                        </td>
+                        <td>{{hincha.modo_transporte}}</td>
+                        <td>{{hincha.celular}}</td>
+                    </tr>
+                {% endfor%}
+            {% endif %}
+        </table>
+        <div class="espacio"></div>
+        <div style="text-align: center;">
+            <a style="float:left; padding: 10px 80px" href=" {{ url_for('lista_hincha', page=page-1) }}">previo</a>
+            <a style="float:right; padding: 10px 80px" href="{{ url_for('lista_hincha', page=page+1) }}">siguiente</a>
+            <a style="display: flex; justify-content: center; align-items: center; padding: 10px 80px" href="/">Inicio</a>
+        </div>
+        <div class="espacio"></div>
+    </body>
+</html>

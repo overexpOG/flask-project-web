@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Panamericanos 2023</title>
+        <link rel="stylesheet" type="text/css" href="../static/css/informacion.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Información del artesano</h1>
+            <p>Nombre: <span>{{data.nombre}}</span></p>
+            <p>Region: <span>{{data.region}}</span></p>
+            <p>Comuna: <span>{{data.comuna}}</span></p>
+            <p>Email: <span>{{data.email}}</span></p>
+            <p>Numero de contacto: <span>{{data.telefono}}</span></p>
+            <p>Tipo de artesanía:</p>
+            <ul>
+                {% for tipo in data.tipos %}
+                    <li>{{ tipo }}</li>
+                {% endfor %}
+            </ul>
+            <p>Imagen de artesania:</p>
+            {% for imagen in data.imagenes%}
+                <a href={{imagen}}>
+                    <img src={{imagen}} alt="">
+                </a>
+            {% endfor%}
+            <p>Descripcion de artesania: <span>{{data.descripcion_artesania}}</span></p>
+            <div class="espacio"></div>
+            <div style="text-align: center;">
+                <a href="/lista-artesano/1">Lista artesanos</a>
+            </div>
+            <div class="espacio"></div>
+        </div>
+    </body>
+</html>

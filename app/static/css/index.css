@@ -1,0 +1,42 @@
+:root {
+    --color-borde: #dbdbdb;
+}
+
+.container {
+    border: 1px solid var(--color-borde);
+    height: 50%;
+    max-width: 350px;
+    margin: 2% auto;
+    padding: 2rem;
+    padding-top: .5rem;
+    background-color: #ffffff;
+}
+
+.logo {
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#bajada {
+    text-align: center;
+}
+
+.html {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.recibido {
+    display: block;
+    position: fixed;
+    width: 35%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}

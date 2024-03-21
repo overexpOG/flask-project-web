@@ -1,0 +1,107 @@
+:root {
+    --color-borde: #dbdbdb;
+}
+
+.container {
+    border: 1px solid var(--color-borde);
+    height: 50%;
+    max-width: 520px;
+    margin: 2% auto;
+    padding: 2rem;
+    padding-top: .5rem;
+    background-color: #ffffff;
+}
+
+.grupo-input {
+    flex-direction: column;
+}
+
+.botones {
+    display: flex;
+    justify-content: center;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.contenedor-label {
+    height: 40px;
+    display: flex;
+}
+
+.confirmation {
+    display: none;
+    position: fixed;
+    width: 35%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+label {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    cursor: pointer;
+}
+
+select {
+    border: 1px solid var(--color-borde);
+    background-color: #fafafa;
+    height: 40px;
+    padding: 9px;
+}
+
+input {
+    border: 1px solid var(--color-borde);
+    background-color: #fafafa;
+    height: 20px;
+    padding: 9px;
+}
+
+textarea {
+    border: 1px solid var(--color-borde);
+    background-color: #fafafa;
+    padding: 9px;
+}
+
+#sport {
+    height: 120px;
+}
+
+#envio {
+    background-color: #4bb4f8;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 20px;
+    padding: 2% 5%;
+    width: 100%;
+    cursor: pointer;
+}
+
+#confirmButton {
+    background-color: #4bb4f8;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 20px;
+    padding: 2% 5%;
+    cursor: pointer;
+}
+
+#cancelButton {
+    background-color: #f8824b;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 20px;
+    padding: 2% 5%;
+    cursor: pointer;
+}

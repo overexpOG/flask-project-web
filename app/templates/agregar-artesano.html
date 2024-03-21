@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Panamericanos 2023</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="../static/css/agregar-artesano.css">
+    </head>
+    <body>
+        <div class="container">
+            <form action="/agregar-artesano" id="add-artesano-form" method="post" enctype="multipart/form-data">
+                <div id="val-box-artesano" hidden>
+                    <h2 id="val-msg-artesano"></h2>
+                    <ul id="val-list-artesano"></ul>
+                </div>
+                {% if error %}
+                    <div class="error">
+                    {{ error }}
+                    </div>
+                {% endif %}
+                <div id="region-input" class="grupo-input">
+                    <div class="contenedor-label">
+                        <label for="region">Region</label>
+                    </div>
+                    <select class="form-select" id="region" name="region" required>
+                        <option value="">Region</option>
+                        <option value=0>Arica y Parinacota</option>
+                        <option value=1>Tarapacá</option>
+                        <option value=2>Antofagasta</option>
+                        <option value=3>Atacama</option>
+                        <option value=4>Coquimbo</option>
+                        <option value=5>Valparaiso</option>
+                        <option value=6>Metropolitana de Santiago</option>
+                        <option value=7>O'Higgins</option>
+                        <option value=8>Maule</option>
+                        <option value=9>Ñuble</option>
+                        <option value=10>Biobío</option>
+                        <option value=11>La Araucanía</option>
+                        <option value=12>Los Ríos</option>
+                        <option value=13>Los Lagos</option>
+                        <option value=14>Aysén</option>
+                        <option value=15>Magallanes y Antártica</option>
+                    </select>
+                </div>
+                <div id="comuna-input" class="grupo-input">
+                    <div class="contenedor-label">
+                        <label for="comuna">Comuna</label>
+                    </div>
+                    <select class="form-select" id="comuna" name="comuna" required>
+                        <option value="">Comuna</option>
+                    </select>
+                </div>
+                <div id="tipo-input" class="grupo-input">
+                    <div class="contenedor-label">
+                        <label for="tipo-artesania">Tipo de artesania</label>
+                    </div>
+                    <select class="form-select" id="tipo-artesania" name="tipo-artesania" multiple required>
+                        <option value=1>Mármol</option>
+                        <option value=2>Madera</option>
+                        <option value=3>Cerámica</option>
+                        <option value=4>Mimbre</option>
+                        <option value=5>Metal</option>
+                        <option value=6>Cuero</option>
+                        <option value=7>Telas</option>
+                        <option value=8>Joyas</option>
+                        <option value=9>Otro tipo</option>
+                    </select>
+                </div>
+                <div id="descripcion-input" class="grupo-input">
+                    <div class="contenedor-label">
+                        <label for="descripcion">Descripción artesanías</label>
+                    </div>
+                    <textarea rows="3" cols="50" id="descripcion" name="descripcion"></textarea>
+                </div>
+                <div id="fotos-input" class="grupo-input">
+                    <div class="contenedor-label">
+                        <label for="imagen">Fotos artesanías</label>
+                    </div>
+                    <input type="file" name="imagen" id="imagen" multiple accept="image/*" required>
+                </div>
+                <div id="name-input" class="grupo-input">
+                    <div class="contenedor-label">
+                        <label for="name">Nombre</label>
+                    </div>
+                    <input id="name" name="name" type="text" size="80" minlength="3" maxlength="80" required>
+                </div>
+                <div id="mail-input" class="grupo-input">
+                    <div class="contenedor-label">
+                        <label for="email">Email</label>
+                    </div>
+                    <input id="email" name="email" type="email" size="30" required>
+                </div>
+                <div id="celular-input" class="grupo-input">
+                    <div class="contenedor-label">
+                        <label for="celular">Numero de contacto</label>
+                    </div>
+                    <span>+56 </span>
+                    <input id="celular" name="celular" type="text" size="15" required>
+                </div>
+                <div class="contenedor-label"></div>
+                <div class="botones">
+                    <button type="button" id="envio">
+                        Registrar Artesano
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div id="Confirmation-artesano" class="confirmation">
+            <p style="text-align: center;">¿Confirma el registro de este artesano?</p>
+            <button type="button" id="confirmButton">Sí, confirmo</button>
+            <button type="button" id="cancelButton">No, quiero volver al formulario</button>
+        </div>
+        <script src="../static/js/agregar-artesano.js"></script>
+    </body>
+</html>

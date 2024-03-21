@@ -1,0 +1,20 @@
+{
+    "insertar_artesano": "INSERT INTO artesano (comuna_id, descripcion_artesania, nombre, email, celular) VALUES (%s,%s,%s,%s,%s);",
+    "listado_artesano": "SELECT id, comuna_id, descripcion_artesania, nombre, email, celular FROM artesano ORDER BY id DESC;",
+    "listado_artesano_5":"SELECT id, comuna_id, descripcion_artesania, nombre, email, celular FROM artesano ORDER BY id DESC LIMIT %s, 5;",
+    "insertar_tipo_artesano":"INSERT INTO artesano_tipo (artesano_id, tipo_artesania_id) VALUES (%s,%s);",
+    "obtener_tipo_artesano":"SELECT TA.nombre FROM tipo_artesania TA, artesano_tipo AT WHERE AT.tipo_artesania_id=TA.id AND AT.artesano_id=%s;",
+    "insertar_foto":"INSERT INTO foto (ruta_archivo, nombre_archivo, artesano_id) VALUES (%s,%s,%s);",
+    "obtener_foto":"SELECT ruta_archivo, nombre_archivo FROM foto WHERE artesano_id=%s;",
+    "obtener_ultimo_id":"SELECT LAST_INSERT_ID();",
+    "obtener_id_comuna":"SELECT id FROM comuna WHERE nombre=%s;",
+    "obtener_info_comuna": "SELECT nombre, region_id FROM comuna WHERE id=%s;",
+    "obtener_artesano_por_id": "SELECT comuna_id, descripcion_artesania, nombre, email, celular FROM artesano WHERE id=%s;",
+    "obtener_nombre_region": "SELECT nombre FROM region WHERE id=%s;",
+    "insertar_hincha": "INSERT INTO hincha (comuna_id, modo_transporte, nombre, email, celular, comentarios) VALUES (%s, %s, %s, %s, %s, %s);",
+    "listado_hincha": "SELECT id, comuna_id, modo_transporte, nombre, email, celular, comentarios FROM hincha ORDER BY id DESC;",
+    "listado_hincha_5": "SELECT id, comuna_id, modo_transporte, nombre, email, celular, comentarios FROM hincha ORDER BY id DESC LIMIT %s, 5;",
+    "insertar_deporte_hincha": "INSERT INTO hincha_deporte (hincha_id, deporte_id) VALUES (%s, %s);",
+    "obtener_deporte_hincha": "SELECT DH.nombre FROM deporte DH, hincha_deporte HD WHERE HD.deporte_id=DH.id AND HD.hincha_id=%s;",
+    "obtener_hincha_por_id": "SELECT comuna_id, modo_transporte, nombre, email, celular, comentarios FROM hincha WHERE id=%s;"
+}

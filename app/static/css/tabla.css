@@ -1,0 +1,28 @@
+table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    border: 3px solid black;
+}
+
+img {
+    width: 125px;
+    height: 125px;
+}
+
+table td {
+    text-align: center;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #98c3ed;
+}
+  
+tbody tr:nth-child(even) {
+    background-color: #d8d8d8;
+}
+
+.espacio {
+    height: 20px;
+}
+  

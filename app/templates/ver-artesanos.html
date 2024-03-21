@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Panamericanos 2023</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="../static/css/tabla.css">
+    </head>
+    <body>
+        <script>
+            function redirectTo(id) {
+                url = "/ver-artesano/" + id;
+                window.location.href = url;
+            }
+        </script>
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Telefono</th>
+                <th>Comuna</th>
+                <th>Tipo Artesanías</th>
+                <th>Fotos</th>
+            </tr>
+            {% if data %}
+                {% for artesano in data%}
+                <tr onclick="redirectTo({{ artesano.id }})">
+                    <td>{{artesano.nombre}}</td>
+                    <td>{{artesano.telefono}}</td>
+                    <td>{{artesano.comuna}}</td>
+                    <td>
+                        <ul>
+                            {% for tipo in artesano.tipos%}
+                            <li>{{tipo}}</li>
+                            {% endfor%}
+                        </ul>
+                    </td>
+                    <td>
+                        {% for imagen in artesano.imagenes%}
+                        <img src="{{imagen}}" alt="">
+                        {% endfor%}
+                    </td>
+                </tr>
+                {% endfor%}
+            {% endif %}
+        </table>
+        <div class="espacio"></div>
+        <div>
+            <a style="float:left; padding: 10px 80px" href=" {{ url_for('lista_artesano', page=page-1) }}">previo</a>
+            <a style="float:right; padding: 10px 80px" href="{{ url_for('lista_artesano', page=page+1) }}">siguiente</a>
+            <a style="display: flex; justify-content: center; align-items: center; padding: 10px 80px" href="/">Inicio</a>
+        </div>
+        <div class="espacio"></div>
+    </body>
+</html>
